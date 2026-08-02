@@ -10,7 +10,7 @@ class Scode < Formula
   # Platforms without a bottle fall back to building from source.
   bottle do
     root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.3.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "e0a23ce1727a8750b549269b1f0fb043c2ea352a9d98911b2151ab8186b85f73"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "8b44bd4fe1ff2819298c283d52b1a47072694b826c3a499cc5813648f2e50404"
   end
 
   on_linux do

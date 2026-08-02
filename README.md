@@ -27,3 +27,18 @@ brew install bindsch/tap/scode
 ```bash
 brew install bindsch/tap/codemux
 ```
+
+## Bottles
+
+Formulae ship prebuilt bottles for the maintainer's platform (currently
+`arm64_tahoe`). Any other platform builds from source automatically.
+
+Bottles are not byte-reproducible: every rebuild produces a new `sha256`, so the
+formula must be updated whenever a bottle is republished. `scripts/bottle.sh`
+builds the bottle, uploads it to the matching tap release, and prints the exact
+`bottle do` block to paste back into the formula:
+
+```bash
+./scripts/bottle.sh scode
+./scripts/bottle.sh codemux
+```
