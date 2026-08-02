@@ -6,6 +6,13 @@ class Scode < Formula
 
   head "https://github.com/bindsch/scode.git", branch: "main"
 
+  # Bottles are built on release and attached to a tap release of the same name.
+  # Platforms without a bottle fall back to building from source.
+  bottle do
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.3.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "e0a23ce1727a8750b549269b1f0fb043c2ea352a9d98911b2151ab8186b85f73"
+  end
+
   on_linux do
     depends_on "bubblewrap"
   end
@@ -23,7 +30,8 @@ class Scode < Formula
     if build.head?
       assert_match(/^scode \d+\.\d+\.\d+$/, version_output)
     else
-      assert_equal "scode 0.3.0", version_output
+      # Derived from the tag in `url`, so a version bump needs no test edit.
+      assert_equal "scode #{version}", version_output
     end
     assert_path_exists lib/"scode/no-sandbox.js"
     assert_path_exists pkgshare/"LICENSE"
