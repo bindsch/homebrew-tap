@@ -1,7 +1,7 @@
 class Scode < Formula
   desc "Safe sandbox wrapper for AI coding harnesses"
   homepage "https://github.com/bindsch/scode"
-  url "https://github.com/bindsch/scode.git", tag: "v0.3.1", revision: "d1d9e0fd3a53dddeb9af37aff26da49bc181d4ee"
+  url "https://github.com/bindsch/scode.git", tag: "v0.3.2", revision: "8acb5fd9bec18036df6a912518c6c47264b4bdc2"
   license "MIT"
 
   head "https://github.com/bindsch/scode.git", branch: "main"
@@ -9,8 +9,8 @@ class Scode < Formula
   # Bottles are built on release and attached to a tap release of the same name.
   # Platforms without a bottle fall back to building from source.
   bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.3.1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "01845daab3ca80e5014ea1e669b20466068d300fcc182685b5d311be26324f81"
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.3.2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "a1250c13777a865c456dfd2f7791dad863b2d762aad38d96c49f29d88c5263dc"
   end
 
   on_linux do
