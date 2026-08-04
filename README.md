@@ -33,25 +33,33 @@ brew install bindsch/tap/codemux
 Formulae ship prebuilt bottles for the maintainer's platform (currently
 `arm64_tahoe`). Any other platform builds from source automatically.
 
-Bottles are not byte-reproducible: every rebuild produces a new `sha256`, so the
-formula must be updated whenever a bottle is republished. `scripts/bottle.sh`
-builds the bottle, uploads it to the matching tap release, and prints the exact
-`bottle do` block to paste back into the formula:
+`scripts/bottle.sh` builds the bottle, uploads it to the matching tap release,
+and writes the resulting `bottle do` block back into the formula:
 
 ```bash
 ./scripts/bottle.sh scode
 ./scripts/bottle.sh codemux
 ```
 
-Prefer bottling a version once. Replacing the asset for an already-published
-version leaves stale copies in Homebrew's download cache and behind GitHub's
-CDN, which surfaces as `Error: Bottle reports different checksum`. Anyone who
-hits it can recover with:
+Review the resulting diff, then commit and push the tap.
+
+Two properties of bottles make this worth automating rather than doing by hand:
+
+- **They are not byte-reproducible.** Every rebuild produces a different
+  `sha256`, so the formula and the published artifact must be updated together.
+  The script writes the checksum it just uploaded, which is why it is no longer
+  a copy-paste step.
+- **Re-publishing a version reuses the asset filename.** Stale copies then
+  linger in Homebrew's download cache and behind GitHub's CDN, and installs fail
+  with `Error: Bottle reports different checksum`. When the script sees a bottle
+  already published for the version, it increments `rebuild` first so the new
+  artifact gets a distinct name and cannot collide.
+
+The formula rewriting lives in `scripts/formula_bottle.py` (`bump` and `write`)
+so it can be read and exercised on its own.
+
+If you do hit a stale cached bottle, clear it with:
 
 ```bash
 rm -f ~/Library/Caches/Homebrew/downloads/*<formula>-<version>*.bottle.tar.gz
 ```
-
-If a bottle genuinely must be rebuilt for an unchanged version, add `rebuild 1`
-(incrementing) inside the `bottle do` block so the artifact gets a distinct
-name instead of colliding with the cached one.
