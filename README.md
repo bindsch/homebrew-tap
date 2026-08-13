@@ -21,11 +21,19 @@ brew install bindsch/tap/scode
 |---------|-------------|
 | [scode](Formula/scode.rb) | Safe sandbox wrapper for AI coding harnesses |
 | [codemux](Formula/codemux.rb) | Unified CLI for AI coding agents |
+| [usagemux](Formula/usagemux.rb) | Provider-neutral subscription usage CLI |
 
 `codemux` depends on `scode`, so installing it pulls in the sandbox:
 
 ```bash
 brew install bindsch/tap/codemux
+```
+
+`usagemux` is an optional companion: install it to enable `codemux usage`.
+It is deliberately not a dependency, so `codemux` works without it.
+
+```bash
+brew install bindsch/tap/usagemux
 ```
 
 ## Bottles
