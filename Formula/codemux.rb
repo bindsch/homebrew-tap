@@ -1,7 +1,7 @@
 class Codemux < Formula
   desc "Unified CLI for AI coding agents"
   homepage "https://github.com/bindsch/codemux"
-  url "https://github.com/bindsch/codemux.git", tag: "v0.3.0", revision: "1d69ad48198d5462c8f454cdb822825ae7dfc9b5"
+  url "https://github.com/bindsch/codemux.git", tag: "v0.3.1", revision: "ee6fb2b244925f237b3f07986a12705180f368ca"
   license "MIT"
 
   head "https://github.com/bindsch/codemux.git", branch: "main"
@@ -10,8 +10,8 @@ class Codemux < Formula
   # A bottle also removes the network fetch that `bun install` performs when
   # building from source. Platforms without a bottle fall back to source.
   bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.3.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7a32b2f690e5f1380d5e5ec5d70ede11a8494ffe0fd5abec78411c689186a6a8"
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.3.1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ef9f2949da6b761cf15e15075718e462e05f6affeb75c806e1e67b91b1acbc93"
   end
 
   depends_on "bindsch/tap/scode"
