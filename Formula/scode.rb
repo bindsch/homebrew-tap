@@ -12,7 +12,6 @@ class Scode < Formula
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "c053e9e66d1b4ca3ee7aa3157e1e2577b9f21c6536f896ada4b78055f369039e"
   end
 
-
   on_linux do
     depends_on "bubblewrap"
   end
