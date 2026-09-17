@@ -1,14 +1,13 @@
 class Codemux < Formula
   desc "Unified CLI for AI coding agents"
   homepage "https://github.com/bindsch/codemux"
-  url "https://github.com/bindsch/codemux.git", tag: "v0.5.1", revision: "73bcb4dd3db87f1c14d339386a7055d65788ba12"
+  url "https://github.com/bindsch/codemux.git", tag: "v0.5.2", revision: "aa473c928a93406027b86c384daa4de08637922d"
   license "MIT"
 
   head "https://github.com/bindsch/codemux.git", branch: "main"
 
   bottle do
     root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.5.1"
-    rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "d4ad41db8ba9494553d77ba9588687c52dd4837af75fdaf908244ad4f79cb968"
   end
 
