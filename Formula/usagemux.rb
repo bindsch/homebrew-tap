@@ -1,7 +1,7 @@
 class Usagemux < Formula
   desc "Provider-neutral subscription usage CLI"
   homepage "https://github.com/bindsch/usagemux"
-  url "https://github.com/bindsch/usagemux.git", tag: "v0.1.1", revision: "fc312d58f32951b3e8fa4307550b691639a2cb6b"
+  url "https://github.com/bindsch/usagemux.git", tag: "v0.2.0", revision: "f392189f43bc6566e2dbcf95e84c9ac208398139"
   license "MIT"
 
   head "https://github.com/bindsch/usagemux.git", branch: "main"
