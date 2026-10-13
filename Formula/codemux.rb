@@ -7,9 +7,9 @@ class Codemux < Formula
   head "https://github.com/bindsch/codemux.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.11.0"
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ef85cd6e8c12c2d2ffbbcd2ad19b348d2edee5a2a6a4efdff468cbdb90401ae"
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.12.0"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3d85c08b28f5509742310c54c0bd47efce912ee900fde6852978cd233119d3c2"
   end
 
   depends_on "bindsch/tap/scode"
