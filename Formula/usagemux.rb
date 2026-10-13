@@ -7,9 +7,9 @@ class Usagemux < Formula
   head "https://github.com/bindsch/usagemux.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/usagemux-0.2.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ed5a16810743a1228bba3c04277968068a74074519a2988cc5c7a3f9e96e2fb"
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/usagemux-0.2.1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b005d4608da507470863fb20d572ead9ebc01620ada6e2683852acb4f0812344"
   end
 
   depends_on "bun"
