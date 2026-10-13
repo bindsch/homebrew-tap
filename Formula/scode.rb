@@ -7,9 +7,9 @@ class Scode < Formula
   head "https://github.com/bindsch/scode.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.6.0"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "818dcc43c854e24f80782f6b891f8ddbe1d91ecfec5826fa852f0d06755afbaf"
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.6.1"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c250fe709474a10fe20065abb8817f0a2675ce47bd9abaf18dbd76b90f3a7f9"
   end
 
   on_linux do
