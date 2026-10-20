@@ -1,7 +1,7 @@
 class Codemux < Formula
   desc "Unified CLI for AI coding agents"
   homepage "https://github.com/bindsch/codemux"
-  url "https://github.com/bindsch/codemux.git", tag: "v0.14.0", revision: "7e74c72e68fce2f677e8d446cadf0bfee4184b16"
+  url "https://github.com/bindsch/codemux.git", tag: "v0.14.1", revision: "d76b0eaaba8442cfb879f227b4d380ed79f50210"
   license "MIT"
 
   head "https://github.com/bindsch/codemux.git", branch: "main"
