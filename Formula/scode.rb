@@ -1,7 +1,7 @@
 class Scode < Formula
   desc "Safe sandbox wrapper for AI coding harnesses"
   homepage "https://github.com/bindsch/scode"
-  url "https://github.com/bindsch/scode.git", tag: "v0.6.1", revision: "aed45a81e9c3d5e84b0fff05d9a4d00885bac82f"
+  url "https://github.com/bindsch/scode.git", tag: "v0.6.2", revision: "e07ba1da079e419f2c35704dca4420440af6f5aa"
   license "MIT"
 
   head "https://github.com/bindsch/scode.git", branch: "main"
