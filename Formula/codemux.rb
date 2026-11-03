@@ -1,16 +1,11 @@
 class Codemux < Formula
   desc "Unified CLI for AI coding agents"
   homepage "https://github.com/bindsch/codemux"
-  url "https://github.com/bindsch/codemux.git", tag: "v0.15.1", revision: "f4a32b7753bb32d4ad3824d048fc18dbcf5b5627"
+  url "https://github.com/bindsch/codemux.git", tag: "v2.0.0", revision: "d88056f6e9737c923b62fffdac4a4f60633b1adf"
   license "MIT"
 
   head "https://github.com/bindsch/codemux.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/codemux-0.15.1"
-    rebuild 19
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b7f91edd7b815826109c95232551677e2a38b8cbccd703a4f8e05fbcef844a7"
-  end
 
   depends_on "bindsch/tap/scode"
   depends_on "bun"
@@ -26,8 +21,12 @@ class Codemux < Formula
     end
 
     # Pin the interpreter so the launcher does not depend on PATH ordering,
-    # which would otherwise pick up an unrelated Bun installation.
-    inreplace libexec/"bin/codemux", "exec bun ", "exec #{bun} "
+    # which would otherwise pick up an unrelated Bun installation. The
+    # launcher carries the codemux_pinned_bun= assignment as the rewrite
+    # target (exactly once; scripts/check-installed-layout.ts enforces it
+    # and applies the same rewrite to its own copy). 2.0.0 removed the
+    # literal `exec bun ` call the previous inreplace matched.
+    inreplace libexec/"bin/codemux", "codemux_pinned_bun=", "codemux_pinned_bun=#{bun}"
 
     bin.install_symlink libexec/"bin/codemux"
   end
