@@ -1,16 +1,11 @@
 class Scode < Formula
   desc "Safe sandbox wrapper for AI coding harnesses"
   homepage "https://github.com/bindsch/scode"
-  url "https://github.com/bindsch/scode.git", tag: "v0.6.2", revision: "e07ba1da079e419f2c35704dca4420440af6f5aa"
+  url "https://github.com/bindsch/scode.git", tag: "v0.6.3", revision: "3009be6480ce26da86842c33e12245939b109e52"
   license "MIT"
 
   head "https://github.com/bindsch/scode.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/scode-0.6.2"
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "664ec61124b3e1059bea35afe78e2972d8b911c9713418c1d37e69099a433d3e"
-  end
 
   on_linux do
     depends_on "bubblewrap"
