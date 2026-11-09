@@ -1,16 +1,11 @@
 class Usagemux < Formula
   desc "Provider-neutral subscription usage CLI"
   homepage "https://github.com/bindsch/usagemux"
-  url "https://github.com/bindsch/usagemux.git", tag: "v0.2.1", revision: "ec42f5d5f36a7c89200dd0ea4d8a33c050beb8d0"
+  url "https://github.com/bindsch/usagemux.git", tag: "v1.0.1", revision: "da5695152755636e608fc66cb3d94fa10ea69535"
   license "MIT"
 
   head "https://github.com/bindsch/usagemux.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/bindsch/homebrew-tap/releases/download/usagemux-0.2.1"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b005d4608da507470863fb20d572ead9ebc01620ada6e2683852acb4f0812344"
-  end
 
   depends_on "bun"
 
