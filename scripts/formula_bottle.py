@@ -65,7 +65,10 @@ def write(formula: Path, bottle_output: Path) -> None:
         head = re.search(r"^  head .*$", text, re.M)
         if not head:
             fail(f"{formula} has neither a bottle block nor a head line")
-        text = text[: head.end()] + "\n\n" + new_block + text[head.end() :]
+        # Exactly one blank line on each side of the block, whatever spacing a
+        # removed block left behind (brew style rejects a doubled blank line).
+        rest = text[head.end() :].lstrip("\n")
+        text = text[: head.end()] + "\n\n" + new_block + "\n\n" + rest
 
     formula.write_text(text)
     print(f"formula_bottle: wrote bottle block into {formula}")
