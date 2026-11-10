@@ -12,7 +12,6 @@ class Usagemux < Formula
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "266620e4ed39ece6df3daa451d2efb34e07409c5b1f73d2f7b498243b58df777"
   end
 
-
   depends_on "bun"
 
   def install
