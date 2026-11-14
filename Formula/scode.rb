@@ -1,11 +1,10 @@
 class Scode < Formula
   desc "Safe sandbox wrapper for AI coding harnesses"
   homepage "https://github.com/bindsch/scode"
-  url "https://github.com/bindsch/scode.git", tag: "v0.6.6", revision: "9cbb7f8c995d778589e23d82ad334ab555e209ae"
+  url "https://github.com/bindsch/scode.git", tag: "v0.6.7", revision: "2e360949aa3775609cc7cdeb03bb47df4dc765f2"
   license "MIT"
 
   head "https://github.com/bindsch/scode.git", branch: "main"
-
 
   on_linux do
     depends_on "bubblewrap"
@@ -13,7 +12,7 @@ class Scode < Formula
 
   def install
     bin.install "scode"
-    (lib/"scode").install "lib/no-sandbox.js"
+    (lib/"scode").install "lib/no-sandbox.js", "lib/strict-teardown.py"
     pkgshare.install "LICENSE"
     (pkgshare/"examples").install Dir["examples/*.yaml"]
   end
@@ -28,6 +27,7 @@ class Scode < Formula
       assert_equal "scode #{version}", version_output
     end
     assert_path_exists lib/"scode/no-sandbox.js"
+    assert_path_exists lib/"scode/strict-teardown.py"
     assert_path_exists pkgshare/"LICENSE"
     assert_path_exists pkgshare/"examples/sandbox.yaml"
     assert_path_exists pkgshare/"examples/sandbox-strict.yaml"
