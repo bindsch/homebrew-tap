@@ -6,6 +6,12 @@ class Usagemux < Formula
 
   head "https://github.com/bindsch/usagemux.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/bindsch/homebrew-tap/releases/download/usagemux-1.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36728e07f658fcbce6b2ee5e19daccb0d9e05061179aa42ea633f7f5473347c2"
+  end
+
   depends_on "bun"
 
   def install
